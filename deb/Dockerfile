@@ -4,7 +4,7 @@
 FROM debian:sid-slim AS build
 
 COPY install.sh PACKAGE /
-RUN apt-get update && apt-get install -y wget binutils
+RUN apt-get update && apt-get install -y wget binutils libfido2-1
 
 # Repack deb (removes unnecessary dependencies and produces /protonmail.deb)
 RUN bash /install.sh
